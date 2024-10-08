@@ -1,9 +1,39 @@
 body {
     background-color: black;
-}
-
-h1 {
     text-align: center;
     color: antiquewhite;
 }
 
+h2 {
+    text-align: center;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+ol {
+    text-align: center;
+    list-style-position: inside;
+}
+
+.item-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.item-right {
+    margin-left: auto;
+    padding-right: 5px;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}

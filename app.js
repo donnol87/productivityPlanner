@@ -21,3 +21,56 @@ const formattedDate = today.toLocaleDateString(undefined, options);
 
 // Find the h2 element with the id 'today-date' and update its content
 document.getElementById('today-date').textContent = formattedDate;
+
+//CRUD application
+let form = document.getElementById("form");
+let input = document.getElementById("input");
+let msg = document.getElementById("msg");
+let posts = document.getElementById("posts");
+
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    console.log("button clicked");
+
+    formValidation();
+});
+
+// prevent users from submitting blank fields
+let formValidation = () => {
+    if (input.value === "") {
+        msg.innerHTML = "Post cannot be blank";
+        console.log("failure");
+    } else {
+        console.log("successs");
+        msg.innerHTML = "";
+        acceptData();
+    }
+};
+
+// now accept data into the input
+let data = {};
+
+let acceptData = () => {
+    data["text"] = input.value;
+    console.log(data);
+    createPost();
+};
+
+// How to create posts using JavaScript template literals
+let createPost = () => {
+    posts.innerHTML += `
+    <div>
+    <p>${data.text}</p>
+    <span class="options">
+      <i onClick="editPost(this)" class="fas fa-edit"></i>
+      <i onClick="deletePost(this)" class="fas fa-trash-alt"></i>
+    </span>
+  </div>`;
+    input.value = "";
+};
+
+// How to delete a post
+
+let deletePost = (e) => {
+    e.parentElement.parentElement.remove();
+};

@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productivity Planner</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
 </head>
 
 <body>
@@ -14,20 +16,68 @@
         <h2 class="item-right" id="today-date">Today's date to the right</h2>
     </section>
 
-    <h2>Quote of the day</h2>
+    <h2 class="quote">"Quote of the day"</h2>
+    <h3 class="author">Author</h3>
 
     <section class="main">
+
+        <h1>Social Media App</h1>
+        <div class="container">
+
+            <div class="left"></div>
+            <div class="right"></div>
+
+        </div>
+
+        <div class="left">
+            <form id="form">
+                <label for="post">What do you need to do today?</label>
+                <br><br>
+                <textarea name="post" id="input" cols="30" rows="10"></textarea>
+                <br> <br>
+                <div id="msg"></div>
+                <button type="submit">Post</button>
+            </form>
+        </div>
+
+        <div class="right">
+            <h3>Most important Tasks of the Day</h3>
+            <div id="posts"></div>
+        </div>
+
+        <div id="posts1">
+            <div>
+                <p>Hello world post 1</p>
+                <span class="options">
+                    <i onclick="deletePost(this)" class="fas fa-edit"></i>
+                    <i onclick="deletePost(this)" class="fas fa-trash-alt"></i>
+                </span>
+            </div>
+
+            <div>
+                <p>Hello world post 2</p>
+                <span class="options">
+                    <i onclick="deletePost(this)" class="fas fa-edit"></i>
+                    <i onclick="deletePost(this)" class="fas fa-trash-alt"></i>
+                </span>
+            </div>
+        </div>
+
         <h3>Most importatnt tasks of the day</h3>
         <ol>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>Text here</li>
+            <li>Text here</li>
+            <li>Text here</li>
+            <li>Text here</li>
+            <li>Text here</li>
         </ol>
 
-        <form action="">Notes section</form>
-        <input type="text">
+
+        <form action="#">
+            <textarea name="blog" placeholder="Notes"></textarea>
+            <br>
+            <input class="notes" type="submit" value="submit">
+        </form>
     </section>
 
     <script src="app.js"></script>

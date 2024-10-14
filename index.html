@@ -21,7 +21,6 @@
 
     <section class="main">
 
-        <h1>Social Media App</h1>
         <div class="container">
 
             <div class="left"></div>
@@ -31,12 +30,12 @@
 
         <div class="left">
             <form id="form">
-                <label for="post">What do you need to do today?</label>
                 <br><br>
-                <textarea name="post" id="input" cols="30" rows="10"></textarea>
+                <textarea name="post" id="input" cols="30" rows="10" class="styled-textarea"
+                    placeholder="Add task to list..."></textarea>
                 <br> <br>
                 <div id="msg"></div>
-                <button type="submit">Post</button>
+                <button type="submit" class="styled-button">Post</button>
             </form>
         </div>
 
@@ -45,39 +44,7 @@
             <div id="posts"></div>
         </div>
 
-        <div id="posts1">
-            <div>
-                <p>Hello world post 1</p>
-                <span class="options">
-                    <i onclick="deletePost(this)" class="fas fa-edit"></i>
-                    <i onclick="deletePost(this)" class="fas fa-trash-alt"></i>
-                </span>
-            </div>
 
-            <div>
-                <p>Hello world post 2</p>
-                <span class="options">
-                    <i onclick="deletePost(this)" class="fas fa-edit"></i>
-                    <i onclick="deletePost(this)" class="fas fa-trash-alt"></i>
-                </span>
-            </div>
-        </div>
-
-        <h3>Most importatnt tasks of the day</h3>
-        <ol>
-            <li>Text here</li>
-            <li>Text here</li>
-            <li>Text here</li>
-            <li>Text here</li>
-            <li>Text here</li>
-        </ol>
-
-
-        <form action="#">
-            <textarea name="blog" placeholder="Notes"></textarea>
-            <br>
-            <input class="notes" type="submit" value="submit">
-        </form>
     </section>
 
     <script src="app.js"></script>

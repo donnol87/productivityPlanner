@@ -63,11 +63,13 @@ let createPost = () => {
     <ol> 
     <li><p>${data.text}</p>
     <span class="options">
-      <i onClick="editPost(this)" class="fas fa-edit"></i>
-      <i onClick="deletePost(this)" class="fas fa-trash-alt"></i>
-    <i class="fas fa-play"></i>
-    <i class="fas fa-check"></i>
+      <i onclick="editPost(this)" class="fas fa-edit"></i>
+      <i onclick="deletePost(this)" class="fas fa-trash-alt"></i>
+        <i onclick="playPost(this)" class="fas fa-play"></i>
+        <i onclick="stopPost(this)" class="fas fa-stop"></i>
+        <i onclick="checkPost(this)" class="fas fa-check"></i>
     </span>
+        <div id="timerDisplay">25:00</div>
     </li>
     </ol>
   </div>`;
@@ -85,4 +87,64 @@ let deletePost = (e) => {
 let editPost = (e) => {
     input.value = e.parentElement.previousElementSibling.innerHTML;
     e.parentElement.parentElement.remove();
+};
+
+// How to play a post
+
+let timerInterval;
+let timeRemaining = 25 * 60; // 25 minutes in seconds
+
+let playPost = (e) => {
+    // Clear any existing timer interval to avoid multiple timers running
+    if (timerInterval) {
+        clearInterval(timerInterval);
+    }
+
+    // Initialize the time to 25 minutes (in seconds)
+    timeRemaining = 25 * 60;
+
+    // Get the element where the timer will be displayed
+    const timerDisplay = document.getElementById('timerDisplay');
+
+    // Update the timer display every second
+    timerInterval = setInterval(() => {
+        let minutes = Math.floor(timeRemaining / 60);
+        let seconds = timeRemaining % 60;
+
+        // Format the timer display with leading zeros
+        let formattedTime = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+        // Update the text content of the timer display
+        timerDisplay.textContent = formattedTime;
+
+        // Decrease time remaining by 1 second
+        timeRemaining--;
+
+        // If time runs out, clear the interval and handle the timer finish event
+        if (timeRemaining < 0) {
+            clearInterval(timerInterval);
+            timerDisplay.textContent = "Time's up!";
+        }
+    }, 1000); // Update every second
+};
+
+// How to stop a post
+
+let stopPost = (e) => {
+    // Clear the interval to stop the timer
+    if (timerInterval) {
+        clearInterval(timerInterval);
+    }
+
+    // Optionally, reset the timer display to its initial state
+    document.getElementById('timerDisplay').textContent = '25:00';
+};
+
+// Clear the post
+
+let checkPost = (element) => {
+    // 'element' is the clicked <i> element (passed via 'this')
+
+    // Toggle the 'completed' class on the element
+    element.parentElement.classList.toggle('completed');
 };

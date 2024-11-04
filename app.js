@@ -151,7 +151,7 @@ let checkPost = (element) => {
 
 // code for generating random quotes on homepage
 
-var quotes = ["quote 1", "quote 2", "quote 3"];
+var quotes = ["'It takes courage to grow up and become who you really are.' — E.E. Cummings", "'Your self-worth is determined by you. You don't have to depend on someone telling you who you are.' — Beyoncé", "'Nothing is impossible. The word itself says 'I'm possible!'' — Audrey Hepburn"];
 
 function newQuote() {
     var randomNumber = Math.floor(Math.random() * (quotes.length));

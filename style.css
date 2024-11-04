@@ -1,7 +1,9 @@
 body {
-    background-color: black;
+    background-color: #f5eac9;
     text-align: center;
-    color: antiquewhite;
+    color: rgb(218, 124, 1);
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 1em;
 }
 
 h2 {
@@ -13,11 +15,6 @@ h2 {
     align-items: center;
     justify-content: space-between;
     position: relative;
-}
-
-ol {
-    text-align: center;
-    list-style-position: inside;
 }
 
 .item-center {
@@ -36,4 +33,118 @@ ol {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+}
+
+textarea {
+    height: 25px;
+    width: 500px;
+}
+
+.styled-textarea {
+    width: 100%;
+    /* Full width container */
+    max-width: 100%;
+    /* Ensure it doesn't go beyond the container */
+    min-width: 100%;
+    /* Prevent shrinking */
+    min-height: 15px;
+    /* Set minimum height */
+    padding: 5px 5px;
+    /* Padding for comfort */
+    font-size: 16px;
+    /* Readable font size */
+    font-family: 'Arial', sans-serif;
+    /* Modern, clean font */
+    border: 1px solid #ccc;
+    /* Soft border */
+    border-radius: 8px;
+    /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow */
+    resize: vertical;
+    /* Allow resizing vertically only */
+    line-height: 1.5;
+    /* Comfortable line spacing */
+    color: #333;
+    /* Text color */
+    background-color: #f9f9f9;
+    /* Light background */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    /* Smooth transitions */
+}
+
+/* Focus state for better user interaction */
+.styled-textarea:focus {
+    border-color: #66afe9;
+    /* Highlight border on focus */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* More pronounced shadow */
+    outline: none;
+    /* Remove default outline */
+    background-color: #fff;
+    /* Brighter background on focus */
+}
+
+button {
+    display: flex;
+}
+
+.styled-button {
+    background-color: #4CAF50;
+    /* Green background */
+    color: white;
+    /* White text */
+    border: none;
+    /* Remove default border */
+    padding: 10px 10px;
+    /* Comfortable padding */
+    font-size: 16px;
+    /* Readable font size */
+    font-family: 'Arial', sans-serif;
+    /* Clean font */
+    border-radius: 8px;
+    /* Rounded corners */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    /* Smooth transition */
+}
+
+.notes {
+    display: flex;
+}
+
+.quote {
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(51, 51, 51);
+}
+
+.author {
+    color: rgb(51, 51, 51);
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ol {
+    list-style-position: inside;
+    /* Keep the numbers inside the list items */
+    padding-left: 0;
+    /* Optional: Remove default padding */
+}
+
+.options {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: grey;
 }

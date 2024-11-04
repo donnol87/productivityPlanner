@@ -146,5 +146,15 @@ let checkPost = (element) => {
     // 'element' is the clicked <i> element (passed via 'this')
 
     // Toggle the 'completed' class on the element
-    element.parentElement.classList.toggle('completed');
+    element.classList.toggle('completed');
 };
+
+// code for generating random quotes on homepage
+
+var quotes = ["quote 1", "quote 2", "quote 3"];
+
+function newQuote() {
+    var randomNumber = Math.floor(Math.random() * (quotes.length));
+    document.getElementById('quoteDisplay').innerHTML = quotes[randomNumber];
+}
+window.addEventListener('load', newQuote, true);

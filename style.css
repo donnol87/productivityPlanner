@@ -153,3 +153,7 @@ ol {
     display: flex;
     justify-content: center;
 }
+
+.hide {
+    display: none;
+}

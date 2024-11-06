@@ -143,9 +143,9 @@ let stopPost = (e) => {
 // Clear the post
 
 let checkPost = (element) => {
-    // 'element' is the clicked <i> element (passed via 'this')
+    //     // 'element' is the clicked <i> element (passed via 'this')
 
-    // Toggle the 'completed' class on the element
+    //     // Toggle the 'completed' class on the element
     element.classList.toggle('completed');
 };
 
